@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healthcare Innovation Summit 2026 — Einstein Innovation Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white:   #ffffff;
+      --off:     #f7f6f3;
+      --light:   #eeece7;
+      --mid:     #d4d0c8;
+      --muted:   #888880;
+      --dark:    #2a2a26;
+      --black:   #111110;
+      --accent:  #0d2d5e;
+      --rule:    #e0ddd6;
+      --font-sans: 'Raleway', sans-serif;
+      --font-serif: 'EB Garamond', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem;
+      height: 64px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--black);
+    }
+    .nav-brand-text {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--dark);
+      text-decoration: none; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--black); color: var(--white);
+      padding: 0.55rem 1.4rem;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--accent); }
+
+    /* HERO */
+    .hero {
+      max-width: 1200px; margin: 0 auto;
+      padding: 7rem 3rem 5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end;
+    }
+    .hero-eyebrow {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--muted);
+      display: flex; align-items: center; gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow span { display: block; width: 26px; height: 1px; background: var(--mid); }
+    h1.hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 5.5vw, 5.2rem);
+      font-weight: 400; line-height: 1.02; letter-spacing: -0.01em;
+    }
+    h1.hero-title em { font-style: italic; color: var(--accent); }
+    .hero-desc {
+      margin-top: 1.8rem;
+      font-size: 0.93rem; font-weight: 300; color: var(--muted); line-height: 1.85;
+      max-width: 420px;
+    }
+    .hero-actions { margin-top: 2.4rem; display: flex; gap: 1.2rem; align-items: center; }
+    .btn-primary {
+      background: var(--black); color: var(--white);
+      padding: 0.72rem 2rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; display: inline-block; transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-text {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--dark); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.35rem; transition: color 0.15s;
+    }
+    .btn-text:hover { color: var(--accent); }
+    .btn-text::after { content: '→'; }
+
+    .hero-meta { display: flex; flex-direction: column; }
+    .hm-row {
+      padding: 1.3rem 0; border-top: 1px solid var(--rule);
+    }
+    .hm-row:last-child { border-bottom: 1px solid var(--rule); }
+    .hm-label {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem;
+    }
+    .hm-val {
+      font-family: var(--font-serif); font-size: 1.1rem; color: var(--black); line-height: 1.35;
+    }
+
+    /* DIVIDERS */
+    .full-rule { border: none; border-top: 1px solid var(--rule); }
+
+    /* SECTION */
+    .section { padding: 5rem 3rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-narrow { max-width: 820px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--muted);
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.2rem;
+    }
+    .eyebrow span { display: block; width: 22px; height: 1px; background: var(--mid); }
+    h2.sh {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 3.2vw, 2.8rem);
+      font-weight: 400; line-height: 1.15; letter-spacing: -0.01em;
+    }
+    h2.sh em { font-style: italic; color: var(--accent); }
+
+    /* REGISTER */
+    #register { background: var(--off); }
+    .luma-box {
+      margin-top: 2.5rem; border: 1px solid var(--rule); background: var(--white);
+      min-height: 480px; display: flex; align-items: center; justify-content: center;
+    }
+    .luma-box iframe { width: 100%; min-height: 480px; border: none; display: block; }
+    .luma-ph { text-align: center; padding: 3.5rem 2rem; }
+    .luma-ph h3 {
+      font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400;
+      color: var(--dark); margin-bottom: 0.7rem;
+    }
+    .luma-ph p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; }
+    .luma-ph code {
+      background: var(--light); padding: 0.15rem 0.4rem; font-size: 0.73rem; color: var(--accent);
+    }
+
+    /* SCHEDULE */
+    #schedule { background: var(--white); }
+    .sched-subhead {
+      margin-top: 0.6rem; font-size: 0.85rem; color: var(--muted); font-weight: 300;
+    }
+    .sched-period {
+      margin-top: 2.5rem; margin-bottom: 0;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); display: flex; align-items: center; gap: 1rem;
+    }
+    .sched-period::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+    .sched-row {
+      display: grid; grid-template-columns: 116px 1fr;
+      gap: 0 2.5rem; padding: 1.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.12s; align-items: start;
+    }
+    .sched-row:hover {
+      background: var(--off); margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem;
+    }
+    .sched-t {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em;
+      color: var(--muted); padding-top: 0.2rem;
+    }
+    .sched-main {}
+    .sched-name {
+      font-family: var(--font-serif); font-size: 1.12rem; font-weight: 400;
+      line-height: 1.28; margin-bottom: 0.3rem; color: var(--black);
+    }
+    .sched-who {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.65; font-weight: 300;
+    }
+    .sched-who b { color: var(--dark); font-weight: 500; }
+    .sched-tag {
+      display: inline-block; margin-top: 0.5rem;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); border: 1px solid var(--accent); padding: 0.17rem 0.55rem;
+    }
+    .sched-row.rest .sched-name {
+      font-family: var(--font-sans); font-weight: 300; font-size: 0.9rem; color: var(--muted);
+    }
+
+    /* TRACKS */
+    #tracks { background: var(--off); }
+    .tracks-grid {
+      margin-top: 2.8rem;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--rule);
+    }
+    .track-card {
+      padding: 2.2rem 1.8rem; border-right: 1px solid var(--rule);
+      transition: background 0.14s;
+    }
+    .track-card:last-child { border-right: none; }
+    .track-card:hover { background: var(--light); }
+    .track-n {
+      font-family: var(--font-serif); font-size: 2.2rem; font-weight: 400;
+      color: var(--mid); line-height: 1; margin-bottom: 1.1rem;
+    }
+    .track-name {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--black); margin-bottom: 0.75rem;
+    }
+    .track-desc { font-size: 0.81rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+
+    /* SPEAKERS */
+    #speakers { background: var(--white); }
+    .speakers-grid {
+      margin-top: 2.8rem;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      border: 1px solid var(--rule);
+    }
+    .spk {
+      padding: 1.8rem 1.5rem;
+      border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+      transition: background 0.12s;
+    }
+    .spk:hover { background: var(--off); }
+    .spk-init {
+      width: 42px; height: 42px; background: var(--light);
+      border: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-size: 0.95rem; color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+    .spk-name {
+      font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400;
+      line-height: 1.22; margin-bottom: 0.28rem;
+    }
+    .spk-cred { font-size: 0.74rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+    .spk-org { font-size: 0.7rem; color: var(--accent); font-weight: 600; margin-top: 0.2rem; }
+    .spk-talk { font-size: 0.77rem; color: var(--dark); font-style: italic; margin-top: 0.45rem; line-height: 1.4; }
+
+    /* ABOUT */
+    #about { background: var(--off); }
+    .about-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr; gap: 6rem; align-items: start;
+    }
+    .about-text {
+      font-size: 0.93rem; color: var(--muted); line-height: 1.88; font-weight: 300;
+    }
+    .about-text p + p { margin-top: 1rem; }
+    .about-text a { color: var(--accent); text-decoration: underline; font-weight: 500; }
+    .about-stats { display: flex; flex-direction: column; gap: 1.8rem; }
+    .astat { border-left: 2px solid var(--mid); padding-left: 1.1rem; }
+    .astat-n {
+      font-family: var(--font-serif); font-size: 2.6rem; font-weight: 400;
+      color: var(--black); line-height: 1;
+    }
+    .astat-l {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); margin-top: 0.2rem;
+    }
+
+    /* SPONSORS */
+    .sponsors {
+      background: var(--white);
+      border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+      padding: 2.4rem 3rem;
+    }
+    .sponsors-inner { max-width: 1100px; margin: 0 auto; }
+    .sponsors-label {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem;
+    }
+    .sponsors-list { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .sp-item {
+      font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--dark); opacity: 0.45;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black); color: var(--white);
+      padding: 3.5rem 3rem 2.5rem;
+    }
+    .ft-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap; gap: 2rem;
+    }
+    .ft-brand-name {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; margin-bottom: 0.4rem; color: #ffffff;
+    }
+    .ft-brand-sub { font-size: 0.76rem; color: rgba(255,255,255,0.6); font-weight: 300; }
+    .ft-nav { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .ft-nav a {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+      text-decoration: none; transition: color 0.15s;
+    }
+    .ft-nav a:hover { color: #ffffff; }
+    .ft-bottom {
+      padding-top: 1.5rem;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;
+    }
+    .ft-copy { font-size: 0.7rem; color: rgba(255,255,255,0.5); font-weight: 300; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero > * { animation: fadeUp 0.65s ease both; }
+    .hero > *:nth-child(1) { animation-delay: 0.05s; }
+    .hero > *:nth-child(2) { animation-delay: 0.2s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 3rem; gap: 3rem; }
+      .section { padding: 3.5rem 1.5rem; }
+      .sponsors { padding: 2rem 1.5rem; }
+      .tracks-grid { grid-template-columns: 1fr 1fr; }
+      .track-card:nth-child(2) { border-right: none; }
+      .track-card:nth-child(3) { border-right: 1px solid var(--rule); border-top: 1px solid var(--rule); }
+      .track-card:last-child { border-top: 1px solid var(--rule); }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      footer { padding: 2.5rem 1.5rem 2rem; }
+    }
+    @media (max-width: 600px) {
+      .tracks-grid { grid-template-columns: 1fr; }
+      .track-card { border-right: none; border-top: 1px solid var(--rule); }
+      .track-card:first-child { border-top: none; }
+      .sched-row { grid-template-columns: 86px 1fr; gap: 0 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="https://www.eignyc.com">
+    <img src="data:image/png;base64,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" alt="Einstein Innovation Group" style="height:38px;width:auto;" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#speakers">Speakers</a></li>
+    <li><a href="#tracks">Tracks</a></li>
+    <li><a href="https://www.eignyc.com" target="_blank">EIG ↗</a></li>
+  </ul>
+  <a class="nav-cta" href="https://luma.com/qnn8w8gj" target="_blank">Register</a>
+</nav>
+
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow"><span></span>Healthcare Innovation Summit · Fall 2026</div>
+    <h1 class="hero-title">Innovation<br>for<br><em>Everyone.</em></h1>
+    <p class="hero-desc">A full-day summit convening leaders across preventative care, diagnostics, and health systems to explore how innovation can scale without leaving people behind — rooted in the Bronx and built for the world.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://luma.com/qnn8w8gj" target="_blank">Register Now</a>
+      <a class="btn-text" href="#schedule">View Schedule</a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="hm-row">
+      <div class="hm-label">Date</div>
+      <div class="hm-val">Sunday, November 8, 2026</div>
+    </div>
+    <div class="hm-row">
+      <div class="hm-label">Time</div>
+      <div class="hm-val">8:00 AM – 5:30 PM ET</div>
+    </div>
+    <div class="hm-row">
+      <div class="hm-label">Location</div>
+      <div class="hm-val">Price Center + Price Courtyard<br>Einstein Campus · Bronx, NY</div>
+    </div>
+    <div class="hm-row">
+      <div class="hm-label">Audience</div>
+      <div class="hm-val">~100 Attendees — Trainees, Clinicians,<br>Founders, Investors & Community Leaders</div>
+    </div>
+    <div class="hm-row">
+      <div class="hm-label">Hosted By</div>
+      <div class="hm-val">Einstein Innovation Group<br>Albert Einstein College of Medicine</div>
+    </div>
+  </div>
+</div>
+
+<hr class="full-rule" />
+
+
+<!-- REGISTER -->
+<section class="section" id="register">
+  <div class="section-narrow">
+    <div class="eyebrow"><span></span>Registration</div>
+    <h2 class="sh">Reserve Your Spot</h2>
+
+    <div class="luma-box">
+      <iframe
+        src="https://luma.com/embed/event/evt-AMbozon850NvbS9/simple"
+        width="100%"
+        style="min-height:520px;border:none;display:block;"
+        allowfullscreen=""
+        aria-hidden="false"
+        tabindex="0">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule" />
+
+
+<!-- SCHEDULE -->
+<section class="section" id="schedule">
+  <div class="section-inner">
+    <div class="eyebrow"><span></span>Program</div>
+    <h2 class="sh">Summit Schedule</h2>
+    <p class="sched-subhead">Sunday, November 8, 2026 · Price Center, Einstein Campus, Bronx NY</p>
+
+    <div class="sched-period">Morning</div>
+
+    <div class="sched-row rest">
+      <div class="sched-t">8:00 AM</div>
+      <div class="sched-main">
+        <div class="sched-name">Coffee + Registration</div>
+        <div class="sched-who">Price Center Lobby</div>
+      </div>
+    </div>
+
+    <div class="sched-row">
+      <div class="sched-t">9:00 AM</div>
+      <div class="sched-main">
+        <div class="sched-name">Opening Remarks</div>
+        <div class="sched-who"><b>Yaron Tomer, MD MBA</b> — The Marilyn and Stanley M. Katz Dean, Albert Einstein College of Medicine</div>
+      </div>
+    </div>
+
+    <div class="sched-row">
+      <div class="sched-t">9:20 AM</div>
+      <div class="sched-main">
+        <div class="sched-name">AM Keynote Address</div>
+        <div class="sched-who"><b>Sarah Matt, MD</b> — Keynote Speaker</div>
+        <span class="sched-tag">Keynote</span>
+      </div>
+    </div>
+
+    <div class="sched-row">
+      <div class="sched-t">9:50–10:50 AM</div>
+      <div class="sched-main">
+        <div class="sched-name">Track 1 — Predict &amp; Prevent</div>
+        <div class="sched-who">
+          <b>Srilakshmi Raj, PhD</b> — Genetic disease risks of under-represented founder populations in NYC<br>
+          <b>Melissa Wasserstein, MD</b> — BEACONS: Building Evidence for Genomics in Newborn Screening<br>
+          <b>John Crary, MD PhD</b> · Mt. Sinai — AI and Human Health<br>
+          <em style="color:var(--accent);font-size:0.75rem;">Panel moderated by Dr. Komal Bajaj</em>
+        </div>
+        <span class="sched-tag">Preventative Care</span>
+      </div>
+    </div>
+
+    <div class="sched-row rest">
+      <div class="sched-t">10:50–11:10 AM</div>
+      <div class="sched-main">
+        <div class="sched-name">Coffee Break</div>
+      </div>
+    </div>
+
+    <div class="sched-period">Midday</div>
+
+    <div class="sched-row">
+      <div class="sched-t">11:10 AM–12:30 PM</div>
+      <div class="sched-main">
+        <div class="sched-name">Track 2 — Treatment &amp; Care Delivery for All</div>
+        <div class="sched-who">
+          Reimagining care delivery through digital health, new care models, and access-focused systems<br><br>
+          <b>Deepesh Chandra, MS</b> · Montefiore Einstein — AI and the Future of Health Systems<br>
+          <b>Mustafa Manzur, MD</b> · Montefiore &amp; NYC Health+Hospitals — Digital Health &amp; AI-Powered Chronic Care: CIBA Health<br>
+          <b>Melynda Barnes, MD</b> · Ro Health — The Consumer Health Landscape
+        </div>
+        <span class="sched-tag">Digital Health</span>
+      </div>
+    </div>
+
+    <div class="sched-row">
+      <div class="sched-t">12:20–12:50 PM</div>
+      <div class="sched-main">
+        <div class="sched-name">Closing Keynote</div>
+        <div class="sched-who"><b>Richard Park, MD</b> — CEO &amp; Co-founder, Rendr · Co-Managing Partner, Ascend Capital Partners · Former CEO, CityMD</div>
+        <span class="sched-tag">Keynote</span>
+      </div>
+    </div>
+
+    <div class="sched-row rest">
+      <div class="sched-t">12:30–1:30 PM</div>
+      <div class="sched-main">
+        <div class="sched-name">Lunch</div>
+        <div class="sched-who">Price Courtyard</div>
+      </div>
+    </div>
+
+    <div class="sched-period">Afternoon</div>
+
+    <div class="sched-row">
+      <div class="sched-t">1:30–2:30 PM</div>
+      <div class="sched-main">
+        <div class="sched-name">Breakout Sessions</div>
+        <div class="sched-who">Parallel small-group discussions across summit tracks</div>
+        <span class="sched-tag">Interactive</span>
+      </div>
+    </div>
+
+    <div class="sched-row">
+      <div class="sched-t">2:30–3:30 PM</div>
+      <div class="sched-main">
+        <div class="sched-name">Active Coding Session</div>
+        <div class="sched-who">Hands-on applied innovation workshop</div>
+        <span class="sched-tag">Workshop</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="full-rule" />
+
+
+<!-- TRACKS -->
+<section class="section" id="tracks">
+  <div class="section-inner">
+    <div class="eyebrow"><span></span>Summit Tracks</div>
+    <h2 class="sh">Four Dimensions of Inclusive Innovation</h2>
+    <div class="tracks-grid">
+      <div class="track-card">
+        <div class="track-n">01</div>
+        <div class="track-name">Global Health</div>
+        <div class="track-desc">Innovations that address health disparities at scale, with a focus on equitable access and sustainability across populations.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-n">02</div>
+        <div class="track-name">Digital Health</div>
+        <div class="track-desc">AI, digital therapeutics, remote monitoring, and technology-enabled care models transforming how patients engage with health systems.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-n">03</div>
+        <div class="track-name">Life Science</div>
+        <div class="track-desc">Drug discovery, diagnostics, biotech, and translational research pathways from bench to bedside.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-n">04</div>
+        <div class="track-name">Community Health</div>
+        <div class="track-desc">Structural approaches to health equity rooted in the Bronx and NYC — co-designed with the communities most impacted by innovation gaps.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule" />
+
+
+<!-- SPEAKERS -->
+<section class="section" id="speakers">
+  <div class="section-inner">
+    <div class="eyebrow"><span></span>Featured Speakers</div>
+    <h2 class="sh">Voices Shaping the Future of Health</h2>
+    <div class="speakers-grid">
+
+      <div class="spk">
+        <div class="spk-init">YT</div>
+        <div class="spk-name">Yaron Tomer, MD MBA</div>
+        <div class="spk-cred">The Marilyn and Stanley M. Katz Dean</div>
+        <div class="spk-org">Albert Einstein College of Medicine</div>
+        <div class="spk-talk">Opening Remarks</div>
+      </div>
+
+      <div class="spk">
+        <div class="spk-init">SM</div>
+        <div class="spk-name">Sarah Matt, MD</div>
+        <div class="spk-cred">AM Keynote Speaker</div>
+        <div class="spk-org">TBD</div>
+        <div class="spk-talk">AM Keynote Address</div>
+      </div>
+
+      <div class="spk">
+        <div class="spk-init">SR</div>
+        <div class="spk-name">Srilakshmi Raj, PhD</div>
+        <div class="spk-cred">Assistant Professor, Dept. of Genetics</div>
+        <div class="spk-org">Albert Einstein College of Medicine</div>
+        <div class="spk-talk">Genetic disease risks of under-represented founder populations in NYC</div>
+      </div>
+
+      <div class="spk">
+        <div class="spk-init">MW</div>
+        <div class="spk-name">Melissa Wasserstein, MD</div>
+        <div class="spk-cred">Chief, Division of Pediatric Genetic Medicine</div>
+        <div class="spk-org">Albert Einstein College of Medicine</div>
+        <div class="spk-talk">BEACONS: Building Evidence for Genomics in Newborn Screening</div>
+      </div>
+
+      <div class="spk">
+        <div class="spk-init">JC</div>
+        <div class="spk-name">John Crary, MD PhD</div>
+        <div class="spk-cred">Professor of Pathology & AI and Human Health</div>
+        <div class="spk-org">Mount Sinai</div>
+        <div class="spk-talk">TBA</div>
+      </div>
+
+      <div class="spk">
+        <div class="spk-init">DC</div>
+        <div class="spk-name">Deepesh Chandra, MS</div>
+        <div class="spk-cred">SVP & Chief Digital and Information Officer</div>
+        <div class="spk-org">Montefiore Einstein</div>
+        <div class="spk-talk">AI and the Future of Health Systems at Montefiore</div>
+      </div>
+
+      <div class="spk">
+        <div class="spk-init">MM</div>
+        <div class="spk-name">Mustafa Manzur, MD</div>
+        <div class="spk-cred">EM Physician · Medical Advisor, CIBA Health</div>
+        <div class="spk-org">Montefiore Einstein & NYC Health+Hospitals</div>
+        <div class="spk-talk">Digital Health & AI-Powered Chronic Care</div>
+      </div>
+
+      <div class="spk">
+        <div class="spk-init">MB</div>
+        <div class="spk-name">Melynda Barnes, MD</div>
+        <div class="spk-cred">Chief Medical Officer</div>
+        <div class="spk-org">Ro Health</div>
+        <div class="spk-talk">The Consumer Health Landscape</div>
+      </div>
+
+      <div class="spk">
+        <div class="spk-init">RP</div>
+        <div class="spk-name">Richard Park, MD</div>
+        <div class="spk-cred">CEO & Co-founder, Rendr · Co-Managing Partner, Ascend Capital</div>
+        <div class="spk-org">Rendr / Ascend Capital Partners</div>
+        <div class="spk-talk">Closing Keynote</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule" />
+
+
+<!-- SPONSORS -->
+<div class="sponsors">
+  <div class="sponsors-inner">
+    <div class="sponsors-label">Supported By</div>
+    <div class="sponsors-list">
+      <span class="sp-item">Einstein Data Sciences Institute</span>
+      <span class="sp-item">Montefiore Innovations</span>
+      <span class="sp-item">Office of Medical Education</span>
+      <span class="sp-item">Einstein Institute for Health Equity</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow"><span></span>About This Event</div>
+        <h2 class="sh" style="margin-bottom:1.5rem;">Built by Trainees.<br><em>For Everyone.</em></h2>
+        <div class="about-text">
+          <p>Healthcare innovation is accelerating how patients are cared for, diagnosed, treated, and prevented from illness. Yet the benefits of innovation often remain concentrated in well-resourced settings — and patients with the greatest need are last to benefit.</p>
+          <p>Aligned with Albert Einstein College of Medicine's mission to advance health equity through science, education, and community engagement, the Healthcare Innovation Summit: <em>Innovation for Everyone</em> convenes leaders to explore how innovation can scale without leaving people behind.</p>
+          <p>EIG is a student-led, institution-facing platform that bridges medicine, business, and innovation. Through seminars, fellowships, case competitions, and incubators, we prepare the next generation of physician-innovators.</p>
+          <p style="margin-top:1.5rem;"><a href="https://www.eignyc.com/about">Learn more about EIG →</a></p>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="astat">
+          <div class="astat-n">~100</div>
+          <div class="astat-l">Expected Attendees</div>
+        </div>
+        <div class="astat">
+          <div class="astat-n">4</div>
+          <div class="astat-l">Summit Tracks</div>
+        </div>
+        <div class="astat">
+          <div class="astat-n">9+</div>
+          <div class="astat-l">Featured Speakers</div>
+        </div>
+        <div class="astat">
+          <div class="astat-n">1</div>
+          <div class="astat-l">Guiding Principle: Innovation for Everyone</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand-name">Einstein Innovation Group</div>
+      <div class="ft-brand-sub">Albert Einstein College of Medicine · Bronx, NY</div>
+      <div class="ft-brand-sub" style="margin-top:0.25rem;">Views expressed are those of EIG, not Albert Einstein College of Medicine.</div>
+    </div>
+    <nav class="ft-nav">
+      <a href="https://www.eignyc.com/about">About EIG</a>
+      <a href="https://aecomeig.substack.com">Newsletter</a>
+      <a href="https://www.linkedin.com/company/aecomeig" target="_blank">LinkedIn</a>
+      <a href="https://x.com/aecomeig" target="_blank">X</a>
+      <a href="mailto:innovation@einsteinmed.edu">Contact</a>
+    </nav>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 Einstein Innovation Group</div>
+    <div class="ft-copy">Healthcare Innovation Summit · November 8, 2026 · Price Center, Bronx NY</div>
+  </div>
+</footer>
+
+</body>
+</html>
